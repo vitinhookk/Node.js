@@ -1,6 +1,6 @@
 const express = require("express")
-const mysql = require("mysql12")
-const bcrypt = require("bcrypt")
+const mysql = require("mysql2")
+const bcrypt = require("bcryptjs")
 const session = require("express-session")
 const bodyParser = require("body-parser")
 const path = require("path")
@@ -72,11 +72,11 @@ app.post('/login', async (requisicao, resposta) => {
                 return;
             }
             const usuario = resultado [0]
-            const senhaValida = await bcrypt.compare(setMaxIdleHTTPParsers, usuario.senha)
+            const senhaValida = await bcrypt.compare(senha, usuario.senha)
             if (senhaValida){
                 requisicao.session.logado = true 
                 requisicao.session.none = nome
-                requisicao.redirect("/painel")
+                resposta.redirect("/painel")
             }
             else {
                 resposta.statuus(401).send("senha incorreta")
