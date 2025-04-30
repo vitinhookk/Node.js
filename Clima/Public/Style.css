@@ -1,0 +1,111 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do corpo da página */
+body {
+    background: #0083b0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Área de busca */
+.area-busca {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Campo de entrada */
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Botão */
+button {
+    padding: 10px 20px;
+    background: #0083b0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #006688;
+}
+
+/* Área do clima */
+.area-clima {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Informações do clima */
+.info-clima {
+    margin-top: 10px;
+}
+
+.info-clima p {
+    margin: 10px 0;
+    color: #333;
+}
+
+.card-clima {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.temperatura {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #666;
+}
+
+.detalhes p {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.detalhes p:last-child {
+    border-bottom: none;
+} 
