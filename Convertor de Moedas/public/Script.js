@@ -20,27 +20,27 @@ document.addEventListener("DOMContentLoaded", () => {
             converter.textContent = "Convertendo..."
             valorConvertido.textContent = "Calculando..."
 
-           const resposta = await fetch( ` /converter?valor=${valor}&de=$
-{moeda}&para=${destino}` )
-const dados = await resposta. json()
+            const resposta = await fetch(`/converter?valor=${valor}&de=${moeda}&para=${destino}`)
+            const dados = await resposta.json()
 
-if(dados.erro) {
-throw new Error(dados. detalhes || dados.erro)
-    }
-//ESTÁ ESCRITO INTL
-const valorFormatado = new Intl.NumberFormat('pt-BR', {
-style: 'currency',
-currency: destino
-}).format(dados.valorConvertido)
+            //if(dados.erro){
+                //throw new Error(dados.detalhes || dados.erro)
+            //}
 
-valorConvertido.textContent = valorFormatado
-} catch (erro) {
-console.error("erro completo: ", erro)
-alert("Erro para converter moeda" + erro.message)
-valorConvertido.textContent = valorFormatado
-} finally {
-  converter.disable = false
-  converter.textContent = "Converter"
-}
+            // Está escrito INTL
+            const valorFormatado = new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: destino
+            }).format(dados.valorConvertido)
+
+            valorConvertido.textContent = valorFormatado
+        } catch(erro) {
+            console.error("Erro completo:", erro)
+            alert("Erro para converter" + erro.message)
+            valorConvertido.textContent = valorFormatado
+        } finally {
+            converter.disable = false
+            converter.textContent = "Converter"
+        }
     })
 })
